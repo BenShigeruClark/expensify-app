@@ -38,7 +38,6 @@ store.dispatch({
   type: 'INCREMENT'
 });
 
-// RESET - set the count equal to zero
 store.dispatch({
   type: 'RESET'
 });
