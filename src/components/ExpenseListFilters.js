@@ -26,8 +26,6 @@ const ExpenseListFilters = (props) => (
   </div>
 );
 
-// setup value and onChange for select
-
 const mapStateToProps = (state) => {
   return {
     filters: state.filters
