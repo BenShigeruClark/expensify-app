@@ -7,3 +7,8 @@ test('should render ExpenseListItem with fixture data', () => {
   const wrapper = shallow(<ExpenseListItem expenses={expenses}/>);
   expect(wrapper).toMatchSnapshot();
 });
+
+test('should render ExpenseListItem with empty data', () => {
+  const wrapper = shallow(<ExpenseListItem expenses={[]} />);
+  expect(wrapper).toMatchSnapshot();
+});
