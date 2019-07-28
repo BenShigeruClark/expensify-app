@@ -14,7 +14,7 @@ test('should render ExpenseForm with expense data', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-test('should render error for invalid from submission', () => {
+test('should render error for invalid form submission', () => {
   const wrapper = shallow(<ExpenseForm />);
   expect(wrapper).toMatchSnapshot();
   wrapper.find('form').simulate('submit', {
@@ -41,3 +41,25 @@ test('should set note on textarea change', () => {
   });
   expect(wrapper.state('note')).toBe(value);
 });
+
+test('should set amount if valid input', () => {
+  const value = '23.50';
+  const wrapper = shallow(<ExpenseForm />);
+  wrapper.find('input').at(1).simulate('change', {
+    target: { value }
+  });
+  expect(wrapper.state('amount')).toBe(value);
+});
+// should set amount if valid input
+// 23.50
+
+test('should not set amount if invalid input', () => {
+  const value = '12.122';
+  const wrapper = shallow(<ExpenseForm />);
+  wrapper.find('input').at(1).simulate('change', {
+    target: { value }
+  });
+  expect(wrapper.state('amount')).toBe('');
+});
+// should not set amount if invalid input
+// 12.122
