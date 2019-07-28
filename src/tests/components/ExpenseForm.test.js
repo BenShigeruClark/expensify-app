@@ -50,8 +50,6 @@ test('should set amount if valid input', () => {
   });
   expect(wrapper.state('amount')).toBe(value);
 });
-// should set amount if valid input
-// 23.50
 
 test('should not set amount if invalid input', () => {
   const value = '12.122';
@@ -61,5 +59,3 @@ test('should not set amount if invalid input', () => {
   });
   expect(wrapper.state('amount')).toBe('');
 });
-// should not set amount if invalid input
-// 12.122
