@@ -37,14 +37,4 @@ test('should handle removeExpense', () => {
   });
 });
 
-// Refactor EditExpensePage to be a class based component
-// Setup mapDispatchToProps editExpense and removeExpense
 
-// should render EditExpensePage
-// snapshot
-
-// should handle editExpense
-// spies
-
-// should handle removeExpense
-// spies
