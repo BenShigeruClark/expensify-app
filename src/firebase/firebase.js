@@ -12,6 +12,24 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-firebase.database().ref().set({
-  name: 'Benjamin Clark'
+const database = firebase.database();
+
+database.ref().set({
+  name: 'Benjamin Clark',
+  age: 46,
+  isSingle: true,
+  location: {
+    city: 'Huntington Beach',
+    country: 'United States'
+  }
+});
+
+// database.ref().set('This is my data.');
+
+database.ref('age').set(27);
+database.ref('location/city').set('Long Beach');
+
+database.ref('attributes').set({
+  height: 74,
+  weight: 120
 });
