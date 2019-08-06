@@ -28,18 +28,12 @@ database.ref().set({
   console.log('This failed.', e);
 });
 
-// database.ref().set('This is my data.');
-
-// database.ref('age').set(27);
-// database.ref('location/city').set('Long Beach');
-
-database.ref('attributes').set({
-  height: 74,
-  weight: 120
-}).then(() => {
-  console.log('Second set call worked!');
-}).catch((e) => {
-  console.log('Failure, please try again', e);
-});
+// database.ref()
+//   .remove()
+//   then(() => {
+//     console.log('Data was removed');
+//   }).catch((e) => {
+//     console.log('Did not remove data', e)
+//   });
 
 
