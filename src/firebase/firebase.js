@@ -14,10 +14,29 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
-database.ref().on('value', (snapshot) => {
-  const val = snapshot.val();
-  console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
-});
+
+
+// database.ref('expenses').push({
+//   description: 'Photography Supplies',
+//   note: 'Equipment needed for Nike shoot',
+//   amount: 2500000,
+//   createdAt: 'August 07, 2019'
+// });
+
+
+
+
+// database.ref('notes/-LliP1hXzLuY6xpg1mlG').remove();
+
+// database.ref('notes').push({
+//   title: 'Course Topics',
+//   body: 'React Native, Angular, Python'
+// });
+
+// database.ref().on('value', (snapshot) => {
+//   const val = snapshot.val();
+//   console.log(`${val.name} is a ${val.job.title} at ${val.job.company}`);
+// });
 
 // Setup data sub -> Benjamin is a Software Developer at Amazon.
 
