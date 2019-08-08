@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+// import { once } from 'cluster';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC79oDDX-9XcN8UBTFYsO8jS9aICQMWyGE",
@@ -14,7 +15,32 @@ firebase.initializeApp(firebaseConfig);
 
 const database = firebase.database();
 
+// child_removed
+database.ref('expenses').on('child_removed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
 
+// child_changed
+database.ref('expenses').on('child_changed', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+// child_added
+database.ref('expenses').on('child_added', (snapshot) => {
+  console.log(snapshot.key, snapshot.val());
+});
+
+// database.ref('expenses').on('value', (snapshot) => {
+//   const expenses = [];
+
+//   snapshot.forEach((childSnapshot) => {
+//     expenses.push({
+//       id: childSnapshot.key,
+//       ...childSnapshot.val()
+//     });
+//   });
+//   console.log(expenses);
+// }); 
 
 // database.ref('expenses').push({
 //   description: 'Photography Supplies',
@@ -22,6 +48,35 @@ const database = firebase.database();
 //   amount: 2500000,
 //   createdAt: 'August 07, 2019'
 // });
+
+database.ref('expenses').push({
+  description: 'movie tickets',
+  note: 'Entertainment Budget',
+  amount: 2500,
+  createdAt: 'August 07, 2019'
+});
+
+// database.ref('expenses').push({
+//   description: 'Food',
+//   note: 'Equipment needed for Nike shoot',
+//   amount: 35000,
+//   createdAt: 'August 07, 2019'
+// });
+
+// database.ref('expenses')
+//   .once('value')
+//   .then((snapshot) => {
+//     const expenses = [];
+
+//     snapshot.forEach((childSnapshot) => {
+//       expenses.push({
+//         id: childSnapshot.key,
+//         ...childSnapshot.val()
+//       });
+//     });
+
+//     console.log(expenses);
+//   });
 
 
 
