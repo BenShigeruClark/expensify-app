@@ -59,6 +59,7 @@ module.exports = (env) => {
         'process.env.FIREBASE_APP_ID': JSON.stringify(process.env.FIREBASE_APP_ID)
       })
     ],
+    node: { fs: 'empty' },
     devtool: isProduction ? 'source-map' : 'inline-source-map',
     devServer: {
       contentBase: path.join(__dirname, 'public'),
