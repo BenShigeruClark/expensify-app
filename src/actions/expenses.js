@@ -1,6 +1,6 @@
 import uuid from 'uuid';
 import database from '../firebase/firebase';
-import SnapshotState from 'jest-snapshot/build/State';
+// import SnapshotState from 'jest-snapshot/build/State';
 
 // ADD_EXPENSE
 export const addExpense = (expense) => ({
