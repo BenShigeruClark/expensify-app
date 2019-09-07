@@ -30,21 +30,21 @@ test('should set up remove expense action object', () => {
   });
 });
 
-// test('should remove expense from firebase', (done) => {
-//   let store = createMockStore({});
-//   const id = expenses[2].id;
-//   store.dispatch(startRemoveExpense({ id })).then(() => {
-//     const actions = store.getActions();
-//     expect(actions[0]).toEqual({
-//       type: 'REMOVE_EXPENSE',
-//       id
-//     });
-//     return database.ref(`expenses/${id}`).once('value');
-//   }).then((snapshot) => {
-//     expect(snapshot.val()).toBeFalsy();
-//     done();
-//   });
-// });
+test('should remove expense from firebase', (done) => {
+  const store = createMockStore({});
+  const id = expenses[2].id;
+  store.dispatch(startRemoveExpense({ id })).then(() => {
+    const actions = store.getActions();
+    expect(actions[0]).toEqual({
+      type: 'REMOVE_EXPENSE',
+      id
+    });
+    return database.ref(`expenses/${id}`).once('value');
+  }).then((snapshot) => {
+    expect(snapshot.val()).toBeFalsy();
+    done();
+  });
+});
 
 test('should set up edit expense action object', () => {
   const action = editExpense('123abc', { note: 'New note value' });
