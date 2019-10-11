@@ -26,6 +26,7 @@
     "express": "4.15.4",
     "firebase": "6.3.4",
     "global": "^4.4.0",
+    "history": "4.7.2",
     "jest-cli": "^24.8.0",
     "moment": "2.18.1",
     "node-sass": "^4.12.0",
