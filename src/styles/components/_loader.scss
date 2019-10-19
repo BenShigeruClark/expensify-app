@@ -1,0 +1,15 @@
+.loader {
+  align-items: center;
+  display: flex;
+  height: 98vh;
+  justify-content: center;
+  margin: 0px;
+  position: absolute;
+  width: 185vh;
+}
+
+.loader__image {
+  height: 6rem;
+  position: absolute;
+  width: 6rem;
+}
